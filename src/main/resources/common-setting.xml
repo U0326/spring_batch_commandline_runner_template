@@ -25,7 +25,7 @@
           p:dataSource-ref="dataSource" />
 
     <!-- DataSourceの定義 -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
           p:driverClassName="org.postgresql.Driver"
           p:url="jdbc:postgresql://localhost:5432/postgres"
           p:username="postgres"

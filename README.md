@@ -3,10 +3,9 @@
 SpringBatchを`org.springframework.batch.core.launch.support.CommandLineJobRunner`を用いて起動するプロジェクトのテンプレートです。
 
 ## 要求事項
-Java 8
+Java 8以上
 
-## ディレクトリ, ファイルの説明
-* `src/main/java`: クラスの追加はこちらに
+## 設定ファイルの説明
 * `src/main/resources/common-setting.xml`: Spring Batchに関する設定(基本変更不要) 
 * `src/main/resources/jop-setting.xml`: ジョブ個別の設定(要変更)
 
@@ -20,5 +19,5 @@ mvn clean package
 # DBを用意します。
 docker run --name postgres --rm -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 # 起動します。
-java -cp 'target/spring_batch_commandline_runner_template-1.0-SNAPSHOT.jar:lib/*' org.springframework.batch.core.launch.support.CommandLineJobRunner -next job-setting.xml <ジョブ名>
+java -cp 'target/*:lib/*' org.springframework.batch.core.launch.support.CommandLineJobRunner -next job-setting.xml <ジョブ名>
 ```
