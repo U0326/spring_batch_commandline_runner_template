@@ -30,9 +30,4 @@
           p:url="jdbc:postgresql://localhost:5432/postgres"
           p:username="postgres"
           p:password="password" />
-    <!-- ジョブ起動の都度、メタデータテーブルをdropし、createする。 -->
-    <jdbc:initialize-database data-source="dataSource">
-        <jdbc:script location="org/springframework/batch/core/schema-drop-postgresql.sql"/>
-        <jdbc:script location="org/springframework/batch/core/schema-postgresql.sql"/>
-    </jdbc:initialize-database>
 </beans>

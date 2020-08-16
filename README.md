@@ -4,6 +4,8 @@ SpringBatchを`org.springframework.batch.core.launch.support.CommandLineJobRunne
 
 ## 要求事項
 Java 8以上
+Maven 3.6.3以上
+Docker
 
 ## 設定ファイルの説明
 * `src/main/resources/common-setting.xml`: Spring Batchに関する設定(基本変更不要) 
@@ -17,7 +19,7 @@ mvn dependency:copy-dependencies -DoutputDirectory=lib
 # ビルドします。
 mvn clean package
 # DBを用意します。
-docker run --name postgres --rm -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
+docker run --name postgres --rm -v `pwd`/initdb:/docker-entrypoint-initdb.d -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 # 起動します。
 java -cp 'target/*:lib/*' org.springframework.batch.core.launch.support.CommandLineJobRunner -next job-setting.xml <ジョブ名>
 ```
