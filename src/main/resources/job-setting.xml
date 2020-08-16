@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/batch
+               http://www.springframework.org/schema/batch/spring-batch-3.0.xsd
+               http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!--  SpringBatch共通の設定  -->
+    <import resource="classpath:/common-setting.xml"/>
+
+    <!--  ジョブの定義  -->
+    <bean id="jobParametersIncrementer"
+          class="org.springframework.batch.core.launch.support.RunIdIncrementer"/>
+    <batch:job id="ジョブ名" job-repository="jobRepository" incrementer="jobParametersIncrementer">
+        <batch:step id="ステップ名">
+            <batch:tasklet transaction-manager="transactionManager">
+                <!--  TODO  -->
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
+</beans>
