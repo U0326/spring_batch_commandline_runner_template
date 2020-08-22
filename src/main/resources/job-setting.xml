@@ -14,7 +14,8 @@
     <import resource="classpath:/common-setting.xml"/>
     <!--  アノテーションを用いたBean定義を可能にする設定  -->
     <context:annotation-config/>
-    <context:component-scan base-package="work.garaku.code.example"/>
+    <!--  TODO  -->
+    <context:component-scan base-package="再帰的なコンポーネントスキャンの始点となるパッケージ"/>
 
     <!--  ジョブの定義  -->
     <bean id="jobParametersIncrementer"
