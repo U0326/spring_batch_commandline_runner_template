@@ -1,6 +1,6 @@
 # spring_batch_commandline_runner_template
 ## 説明
-SpringBatchを`org.springframework.batch.core.launch.support.CommandLineJobRunner`を用いて起動するプロジェクトのテンプレートです。
+SpringBatchを`org.springframework.batch.core.launch.support.CommandLineJobRunner`を用いて起動する、プロジェクトを作成する為のテンプレートです。
 
 ## 要求事項
 * Java 8以上
